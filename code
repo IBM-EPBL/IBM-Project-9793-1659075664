@@ -1,0 +1,23 @@
+int gas=A0;
+int piezo=9;
+
+int val; 
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(piezo,OUTPUT);
+  pinMode(gas,INPUT);
+}
+
+void loop()
+{
+  val = analogRead (A0);
+  Serial.print("Calidad de aire: ");
+  Serial.println(val);
+  if (val <500 )
+  {digitalWrite (9, LOW);}
+  else 
+  {digitalWrite(9, HIGH);}
+  delay(500);
+}
